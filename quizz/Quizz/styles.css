@@ -66,10 +66,10 @@ main { width: min(100% - 28px, 1120px); margin: 0 auto; flex: 1; padding: 34px 0
 }
 
 .hero-logo {
-  width: 250px;
-  height: 250px;
+  width: 205px;
+  height: 205px;
   object-fit: contain;
-  filter: drop-shadow(0 8px 10px rgba(0,0,0,.16));
+  filter: drop-shadow(0 6px 8px rgba(0,0,0,.14));
 }
 .hero-copy { position: relative; z-index: 1; max-width: 650px; }
 .eyebrow { display: inline-block; font-size: .72rem; letter-spacing: .16em; font-weight: 800; opacity: .78; }
@@ -173,8 +173,8 @@ h1 span { color: #7df281; }
   main { width: min(100% - 20px, 650px); padding-top: 20px; }
   .hero-card { grid-template-columns: 1fr; text-align: center; min-height: 0; padding: 28px 22px 32px; }
   .hero-logo {
-  width: 220px;
-  height: 220px;
+  width: 180px;
+  height: 180px;
 }
   .hero-copy p { margin-inline: auto; }
   .mode-grid { grid-template-columns: 1fr; }
@@ -190,9 +190,9 @@ h1 span { color: #7df281; }
 @media (max-width: 480px) {
   .brand small { display: none; }
   .brand img { width: 40px; height: 40px; }
-  .hero-logo {
-  width: 190px;
-  height: 190px;
+ .hero-logo {
+  width: 155px;
+  height: 155px;
 }
   h1 { font-size: 3.4rem; }
   .quick-info { grid-template-columns: 1fr; }
