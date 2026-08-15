@@ -319,3 +319,97 @@ h1 span { color: #7df281; }
     height: 245px;
   }
 }
+/* =========================================================
+   CORREÇÃO DEFINITIVA — EMBLEMA EAC
+   ========================================================= */
+
+/* Círculo onde fica o emblema */
+.hero-logo-wrap {
+  width: 250px !important;
+  height: 250px !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  position: relative !important;
+  z-index: 1 !important;
+
+  background: #ffffff !important;
+  border-radius: 50% !important;
+
+  border: 5px solid rgba(255, 255, 255, 0.95) !important;
+
+  /* MUITO IMPORTANTE:
+     não cortar a imagem */
+  overflow: visible !important;
+
+  box-shadow:
+    0 14px 30px rgba(0, 0, 0, 0.20),
+    0 0 0 8px rgba(255, 255, 255, 0.08) !important;
+}
+
+
+/* Emblema */
+.hero-logo {
+  width: 185px !important;
+  height: 185px !important;
+
+  min-width: 185px !important;
+  min-height: 185px !important;
+
+  max-width: none !important;
+  max-height: none !important;
+
+  object-fit: contain !important;
+
+  display: block !important;
+
+  transform: none !important;
+
+  filter: drop-shadow(
+    0 5px 7px rgba(0, 0, 0, 0.14)
+  ) !important;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 780px) {
+
+  .hero-logo-wrap {
+    width: 220px !important;
+    height: 220px !important;
+  }
+
+  .hero-logo {
+    width: 165px !important;
+    height: 165px !important;
+
+    min-width: 165px !important;
+    min-height: 165px !important;
+  }
+}
+
+
+/* =========================================================
+   TELEMÓVEL
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+  .hero-logo-wrap {
+    width: 190px !important;
+    height: 190px !important;
+  }
+
+  .hero-logo {
+    width: 140px !important;
+    height: 140px !important;
+
+    min-width: 140px !important;
+    min-height: 140px !important;
+  }
+}
