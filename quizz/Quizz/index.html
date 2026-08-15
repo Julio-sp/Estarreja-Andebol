@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#138a17">
+  <meta name="description" content="Desafio EAC — Aprender, Jogar e Evoluir. Quiz educativo sobre as regras do andebol.">
+  <title>Desafio EAC — Aprender, Jogar e Evoluir</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <button class="brand" id="brandButton" aria-label="Voltar ao início">
+        <img src="assets/emblema-eac.png" alt="Emblema do Estarreja Andebol Clube">
+        <span>
+          <strong>Desafio EAC</strong>
+          <small>Aprender, Jogar e Evoluir</small>
+        </span>
+      </button>
+      <nav class="top-actions" aria-label="Navegação principal">
+        <button class="icon-button" id="statsButton" title="Estatísticas" aria-label="Estatísticas">📊</button>
+        <button class="icon-button" id="signalsButton" title="Sinais do árbitro" aria-label="Sinais do árbitro">🖐️</button>
+      </nav>
+    </header>
+
+    <main id="app" tabindex="-1">
+      <!-- Início -->
+      <section class="screen active" id="homeScreen" aria-labelledby="homeTitle">
+        <div class="hero-card">
+          <div class="hero-logo-wrap">
+            <img class="hero-logo" src="assets/emblema-eac.png" alt="Emblema oficial do Estarreja Andebol Clube">
+          </div>
+          <div class="hero-copy">
+            <span class="eyebrow">ESTARREJA ANDEBOL CLUBE</span>
+            <h1 id="homeTitle">Aprender.<br>Jogar.<br><span>Evoluir.</span></h1>
+            <p>Um desafio rápido para aprender as regras do andebol enquanto jogas.</p>
+          </div>
+        </div>
+
+        <div class="mode-grid">
+          <button class="mode-card" data-mode="treino">
+            <span class="mode-icon">🎯</span>
+            <span class="mode-title">Modo Treino</span>
+            <span class="mode-text">Sem relógio. Aprende com a explicação depois de cada resposta.</span>
+            <span class="mode-cta">Começar treino →</span>
+          </button>
+          <button class="mode-card accent" data-mode="desafio">
+            <span class="mode-icon">⚡</span>
+            <span class="mode-title">Modo Desafio</span>
+            <span class="mode-text">Tempo limitado. Quanto mais rápido e certo, melhor a pontuação.</span>
+            <span class="mode-cta">Aceitar desafio →</span>
+          </button>
+        </div>
+
+        <div class="quick-info">
+          <div><strong>50</strong><span>perguntas no banco</span></div>
+          <div><strong>15</strong><span>perguntas por partida</span></div>
+          <div><strong>3</strong><span>ajudas do treinador</span></div>
+        </div>
+
+        <div class="home-links">
+          <button class="text-button" id="homeStats">Ver as minhas estatísticas</button>
+          <button class="text-button" id="homeSignals">Aprender os sinais do árbitro</button>
+        </div>
+      </section>
+
+      <!-- Quiz -->
+      <section class="screen" id="quizScreen" aria-labelledby="quizTitle">
+        <div class="quiz-head">
+          <div>
+            <span class="eyebrow" id="modeLabel">MODO TREINO</span>
+            <h2 id="quizTitle">Pergunta <span id="questionNumber">1</span> de <span id="questionTotal">15</span></h2>
+          </div>
+          <div class="quiz-head-actions">
+            <div class="timer" id="timerBox" hidden><span>⏱</span> <strong id="timer">20</strong>s</div>
+            <button class="help-button" id="coachHelp" title="Eliminar duas respostas erradas">
+              <span>🧑‍🏫</span><b>Ajuda do treinador</b><em id="helpCount">3</em>
+            </button>
+          </div>
+        </div>
+
+        <div class="progress-track" aria-hidden="true"><div class="progress-bar" id="progressBar"></div></div>
+
+        <article class="question-card" id="questionCard">
+          <div class="question-meta">
+            <span class="category-pill" id="categoryPill">Regra</span>
+            <span class="question-points" id="pointsLabel">+100 pontos</span>
+          </div>
+          <h3 id="questionText">Pergunta...</h3>
+          <div class="answers" id="answers" role="group" aria-label="Opções de resposta"></div>
+          <div class="feedback" id="feedback" hidden>
+            <div class="feedback-title" id="feedbackTitle"></div>
+            <p id="feedbackText"></p>
+            <small id="feedbackRule"></small>
+            <button class="next-button" id="nextButton">Continuar →</button>
+          </div>
+        </article>
+
+        <div class="quiz-footer">
+          <button class="quit-button" id="quitButton">Sair do jogo</button>
+          <span id="scoreLabel">0 pontos</span>
+        </div>
+      </section>
+
+      <!-- Resultado -->
+      <section class="screen" id="resultScreen" aria-labelledby="resultTitle">
+        <div class="result-card">
+          <div class="result-medal" id="resultMedal">🏆</div>
+          <span class="eyebrow">PARTIDA TERMINADA</span>
+          <h2 id="resultTitle">Muito bem!</h2>
+          <p id="resultMessage">Cada pergunta é uma oportunidade para aprender.</p>
+          <div class="result-score"><strong id="finalScore">0</strong><span>pontos</span></div>
+          <div class="result-stats">
+            <div><strong id="finalCorrect">0</strong><span>certas</span></div>
+            <div><strong id="finalWrong">0</strong><span>erradas</span></div>
+            <div><strong id="finalPercent">0%</strong><span>aproveitamento</span></div>
+          </div>
+          <div class="result-actions">
+            <button class="primary-button" id="playAgain">Novo jogo</button>
+            <button class="secondary-button" id="resultStats">Ver estatísticas</button>
+            <button class="secondary-button" id="resultHome">Voltar ao início</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Estatísticas -->
+      <section class="screen" id="statsScreen" aria-labelledby="statsTitle">
+        <div class="section-heading">
+          <span class="eyebrow">O TEU PROGRESSO</span>
+          <h2 id="statsTitle">Estatísticas</h2>
+          <p>Os teus resultados ficam guardados apenas neste dispositivo.</p>
+        </div>
+        <div class="stats-grid">
+          <div class="stat-card"><span>Partidas</span><strong id="statGames">0</strong></div>
+          <div class="stat-card"><span>Perguntas</span><strong id="statQuestions">0</strong></div>
+          <div class="stat-card"><span>Respostas certas</span><strong id="statCorrect">0</strong></div>
+          <div class="stat-card"><span>Aproveitamento</span><strong id="statAccuracy">0%</strong></div>
+          <div class="stat-card wide"><span>Melhor pontuação</span><strong id="statBest">0</strong></div>
+          <div class="stat-card wide"><span>Ajuda do treinador usada</span><strong id="statHelps">0</strong></div>
+        </div>
+        <div class="stats-note" id="statsNote">Joga uma partida para começares a construir o teu histórico.</div>
+        <button class="secondary-button danger-outline" id="resetStats">Apagar estatísticas deste dispositivo</button>
+        <button class="text-button back-button" id="statsHome">← Voltar ao início</button>
+      </section>
+
+      <!-- Sinais -->
+      <section class="screen" id="signalsScreen" aria-labelledby="signalsTitle">
+        <div class="section-heading">
+          <span class="eyebrow">ARBITRAGEM</span>
+          <h2 id="signalsTitle">Sinais do árbitro</h2>
+          <p>Representações educativas dos sinais mais úteis para quem está a jogar. Não são reproduções oficiais dos desenhos da IHF.</p>
+        </div>
+        <div class="signals-grid" id="signalsGrid"></div>
+        <button class="text-button back-button" id="signalsHome">← Voltar ao início</button>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>Desafio EAC</span><span>•</span><span>Aprender, Jogar e Evoluir</span>
+    </footer>
+  </div>
+
+  <script src="questions.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
