@@ -287,18 +287,18 @@ h1 span { color: #7df281; }
  */
 
 .hero-logo {
-  width: 175px;
-  height: 175px;
+  width: 190px;
+  height: 190px;
 
-  min-width: 175px;
-  min-height: 175px;
+  min-width: 190px;
+  min-height: 190px;
 
-  max-width: 175px;
-  max-height: 175px;
+  max-width: 190px;
+  max-height: 190px;
 
   display: block;
 
-  flex: 0 0 175px;
+  flex: 0 0 190px;
 
   object-fit: contain;
 
@@ -335,16 +335,16 @@ h1 span { color: #7df281; }
   }
 
   .hero-logo {
-    width: 150px;
-    height: 150px;
+    width: 165px;
+    height: 165px;
 
-    min-width: 150px;
-    min-height: 150px;
+    min-width: 165px;
+    min-height: 165px;
 
-    max-width: 150px;
-    max-height: 150px;
+    max-width: 165px;
+    max-height: 165px;
 
-    flex: 0 0 150px;
+    flex: 0 0 165px;
   }
 
   .brand img {
@@ -373,15 +373,15 @@ h1 span { color: #7df281; }
   }
 
   .hero-logo {
-    width: 125px;
-    height: 125px;
+    width: 140px;
+    height: 140px;
 
-    min-width: 125px;
-    min-height: 125px;
+    min-width: 140px;
+    min-height: 140px;
 
-    max-width: 125px;
-    max-height: 125px;
+    max-width: 140px;
+    max-height: 140px;
 
-    flex: 0 0 125px;
+    flex: 0 0 140px;
   }
 }
