@@ -172,7 +172,10 @@ h1 span { color: #7df281; }
 @media (max-width: 780px) {
   main { width: min(100% - 20px, 650px); padding-top: 20px; }
   .hero-card { grid-template-columns: 1fr; text-align: center; min-height: 0; padding: 28px 22px 32px; }
-  .hero-logo { width: 170px; height: 170px; }
+  .hero-logo {
+  width: 220px;
+  height: 220px;
+}
   .hero-copy p { margin-inline: auto; }
   .mode-grid { grid-template-columns: 1fr; }
   .answers { grid-template-columns: 1fr; }
@@ -187,7 +190,10 @@ h1 span { color: #7df281; }
 @media (max-width: 480px) {
   .brand small { display: none; }
   .brand img { width: 40px; height: 40px; }
-  .hero-logo { width: 145px; height: 145px; }
+  .hero-logo {
+  width: 190px;
+  height: 190px;
+}
   h1 { font-size: 3.4rem; }
   .quick-info { grid-template-columns: 1fr; }
   .quick-info div { padding: 12px; }
