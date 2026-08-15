@@ -56,8 +56,21 @@ main { width: min(100% - 28px, 1120px); margin: 0 auto; flex: 1; padding: 34px 0
   background: linear-gradient(135deg, var(--green-deep), var(--green-dark)); color: white; box-shadow: var(--shadow);
 }
 .hero-card::after { content: ""; position: absolute; width: 420px; height: 420px; border: 70px solid rgba(255,255,255,.06); border-radius: 50%; right: -150px; top: -180px; }
-.hero-logo-wrap { display: grid; place-items: center; position: relative; z-index: 1; }
-.hero-logo { width: min(220px, 70vw); height: min(220px, 70vw); object-fit: contain; filter: drop-shadow(0 14px 16px rgba(0,0,0,.18)); }
+.hero-logo-wrap {
+  width: 250px;
+  height: 250px;
+  display: grid;
+  place-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-logo {
+  width: 250px;
+  height: 250px;
+  object-fit: contain;
+  filter: drop-shadow(0 8px 10px rgba(0,0,0,.16));
+}
 .hero-copy { position: relative; z-index: 1; max-width: 650px; }
 .eyebrow { display: inline-block; font-size: .72rem; letter-spacing: .16em; font-weight: 800; opacity: .78; }
 h1,h2,h3,p { margin-top: 0; }
