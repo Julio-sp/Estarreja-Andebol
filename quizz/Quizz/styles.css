@@ -239,18 +239,18 @@ h1 span { color: #7df281; }
  * NÃO estamos alterando o ficheiro do emblema.
  */
 .hero-logo {
-  width: 330px;
-  height: 330px;
+  width: 310px;
+  height: 310px;
 
   max-width: none;
   max-height: none;
 
   object-fit: contain;
 
-  transform: scale(1.08);
+  transform: scale(1);
 
   filter: drop-shadow(
-    0 8px 10px rgba(0, 0, 0, 0.16)
+    0 6px 8px rgba(0, 0, 0, 0.14)
   );
 }
 
