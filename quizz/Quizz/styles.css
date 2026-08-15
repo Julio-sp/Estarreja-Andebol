@@ -208,69 +208,116 @@ h1 span { color: #7df281; }
 }
 /* =========================================================
    AJUSTE VISUAL DO EMBLEMA EAC
-   Versão 1.1
-   Mantém o PNG original intacto.
+   Versão 2.0 — bloco único
+   Mantém o PNG original do clube intacto.
    ========================================================= */
 
-/* Emblema do cabeçalho */
+
+/* =========================================================
+   EMBLEMA DO CABEÇALHO
+   ========================================================= */
+
 .brand img {
   width: 50px;
   height: 50px;
   object-fit: contain;
+  display: block;
+
   padding: 3px;
+  box-sizing: border-box;
+
   background: #ffffff;
   border: 2px solid rgba(13, 111, 19, 0.16);
   border-radius: 50%;
-  box-shadow: 0 5px 14px rgba(7, 59, 11, 0.14);
+
+  box-shadow:
+    0 5px 14px rgba(7, 59, 11, 0.14);
 }
 
-/* Área principal do emblema */
+
+/* =========================================================
+   CÍRCULO PRINCIPAL DO EMBLEMA
+   ========================================================= */
+
 .hero-logo-wrap {
   width: 250px;
   height: 250px;
-  display: grid;
-  place-items: center;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   position: relative;
   z-index: 1;
+
   justify-self: center;
 
-  /* Fundo branco para destacar o emblema */
+  box-sizing: border-box;
+
   background: #ffffff;
 
-  /* Forma circular */
   border-radius: 50%;
 
-  /* Moldura discreta */
   border: 5px solid rgba(255, 255, 255, 0.95);
 
-  /* Separação visual do fundo verde */
+  /*
+   * IMPORTANTE:
+   * O círculo NÃO deve cortar o PNG.
+   */
+  overflow: visible;
+
   box-shadow:
     0 18px 32px rgba(0, 0, 0, 0.22),
     0 0 0 10px rgba(255, 255, 255, 0.08);
-
-  /* Permite aumentar o PNG sem mostrar a área transparente */
-  overflow: hidden;
 }
 
-/*
- * O PNG original possui uma margem transparente.
- * Por isso aumentamos a imagem dentro do círculo.
- * NÃO estamos alterando o ficheiro do emblema.
- */
-.hero-logo {
-  width: 310px;
-  height: 310px;
 
-  max-width: none;
-  max-height: none;
+/* =========================================================
+   EMBLEMA EAC
+   ========================================================= */
+
+/*
+ * O emblema fica deliberadamente menor que o círculo.
+ *
+ * Círculo: 250px
+ * Emblema: 175px
+ *
+ * Assim existe espaço branco em todos os lados
+ * e o emblema completo fica visível.
+ */
+
+.hero-logo {
+  width: 175px;
+  height: 175px;
+
+  min-width: 175px;
+  min-height: 175px;
+
+  max-width: 175px;
+  max-height: 175px;
+
+  display: block;
+
+  flex: 0 0 175px;
 
   object-fit: contain;
 
-  transform: scale(1);
+  object-position: center center;
 
-  filter: drop-shadow(
-    0 6px 8px rgba(0, 0, 0, 0.14)
-  );
+  margin: 0;
+  padding: 0;
+
+  box-sizing: border-box;
+
+  transform: none;
+
+  /*
+   * Não cortar nem ampliar artificialmente o PNG.
+   */
+  overflow: visible;
+
+  filter:
+    drop-shadow(0 5px 7px rgba(0, 0, 0, 0.14));
 }
 
 
@@ -283,11 +330,21 @@ h1 span { color: #7df281; }
   .hero-logo-wrap {
     width: 220px;
     height: 220px;
+
+    border-width: 4px;
   }
 
   .hero-logo {
-    width: 295px;
-    height: 295px;
+    width: 150px;
+    height: 150px;
+
+    min-width: 150px;
+    min-height: 150px;
+
+    max-width: 150px;
+    max-height: 150px;
+
+    flex: 0 0 150px;
   }
 
   .brand img {
@@ -309,107 +366,22 @@ h1 span { color: #7df281; }
   }
 
   .hero-logo-wrap {
-    width: 180px;
-    height: 180px;
+    width: 190px;
+    height: 190px;
+
     border-width: 4px;
   }
 
   .hero-logo {
-    width: 245px;
-    height: 245px;
-  }
-}
-/* =========================================================
-   CORREÇÃO DEFINITIVA — EMBLEMA EAC
-   ========================================================= */
+    width: 125px;
+    height: 125px;
 
-/* Círculo onde fica o emblema */
-.hero-logo-wrap {
-  width: 250px !important;
-  height: 250px !important;
+    min-width: 125px;
+    min-height: 125px;
 
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
+    max-width: 125px;
+    max-height: 125px;
 
-  position: relative !important;
-  z-index: 1 !important;
-
-  background: #ffffff !important;
-  border-radius: 50% !important;
-
-  border: 5px solid rgba(255, 255, 255, 0.95) !important;
-
-  /* MUITO IMPORTANTE:
-     não cortar a imagem */
-  overflow: visible !important;
-
-  box-shadow:
-    0 14px 30px rgba(0, 0, 0, 0.20),
-    0 0 0 8px rgba(255, 255, 255, 0.08) !important;
-}
-
-
-/* Emblema */
-.hero-logo {
-  width: 185px !important;
-  height: 185px !important;
-
-  min-width: 185px !important;
-  min-height: 185px !important;
-
-  max-width: none !important;
-  max-height: none !important;
-
-  object-fit: contain !important;
-
-  display: block !important;
-
-  transform: none !important;
-
-  filter: drop-shadow(
-    0 5px 7px rgba(0, 0, 0, 0.14)
-  ) !important;
-}
-
-
-/* =========================================================
-   TABLET
-   ========================================================= */
-
-@media (max-width: 780px) {
-
-  .hero-logo-wrap {
-    width: 220px !important;
-    height: 220px !important;
-  }
-
-  .hero-logo {
-    width: 165px !important;
-    height: 165px !important;
-
-    min-width: 165px !important;
-    min-height: 165px !important;
-  }
-}
-
-
-/* =========================================================
-   TELEMÓVEL
-   ========================================================= */
-
-@media (max-width: 480px) {
-
-  .hero-logo-wrap {
-    width: 190px !important;
-    height: 190px !important;
-  }
-
-  .hero-logo {
-    width: 140px !important;
-    height: 140px !important;
-
-    min-width: 140px !important;
-    min-height: 140px !important;
+    flex: 0 0 125px;
   }
 }
